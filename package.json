@@ -1,0 +1,32 @@
+{
+  "name": "burgersandbuns",
+  "version": "1.0.0",
+  "description": "A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaunsnowden/burgersandbuns.git"
+  },
+  "keywords": [
+    "MySQL",
+    "Node",
+    "Express",
+    "Handlebars",
+    "ORM"
+  ],
+  "author": "Shaun Snowden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaunsnowden/burgersandbuns/issues"
+  },
+  "homepage": "https://github.com/shaunsnowden/burgersandbuns#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "handlebars": "^4.0.11",
+    "sequelize": "^4.17.2"
+  }
+}
