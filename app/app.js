@@ -7,6 +7,7 @@ const dateFormat = require('dateformat');
 const exphbs = require('express-handlebars');
 
 const routes = require('./controllers/home.js');
+var connection = require('./controllers/connection.js');
 
 var port = process.env.PORT || 8010;
 var now = new Date();
@@ -24,6 +25,13 @@ app.set('view engine', 'handlebars');
 // app.get('/',function(req,res){
 //     res.render('home');
 // });
+
+app.post('/create', function(req,res){
+  connection.query('INSERT INTO burgers (burger) VALUES (?);',[req.body.burger], function(err,result){
+    if(err) throw err;
+    res.redirect('/');
+  });
+});
 
 app.use('/', routes);
 
