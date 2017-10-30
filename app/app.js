@@ -33,6 +33,13 @@ app.post('/create', function(req,res){
   });
 });
 
+app.put('/update', function(req,res){
+  connection.query('UPDATE burgers SET eaten_by=?, has_been_eaten=1 WHERE id=?;',[req.body.eatenBy, req.body.value], function(err,results){
+    if(err) throw err;
+    res.redirect('/');
+  });
+});
+
 app.use('/', routes);
 
 // Expose the public directory to access all files

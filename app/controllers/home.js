@@ -11,6 +11,6 @@ router.get('/',function(req,res){
   })
 });
 
-console.log('home.js imported')
+// console.log('home.js imported')
 
 module.exports = router;

@@ -28,9 +28,16 @@
 
       <ul>
         {{#each burgers}}
+          {{#unless this.has_been_eaten}}
+          <br>
           <li>
             <p>{{this.id}}. {{this.burger}}</p>
+            <form method="POST" action="/update?_method=PUT" burgerID="{{this.id}}">
+              <textarea type="text" name="eatenBy" placeholder="Name of User"></textarea>
+              <button type="submit">EAT DA BURGER</button>
+            </form>
           </li>
+          {{/unless}}
         {{/each}}
       </ul>
 
@@ -42,6 +49,21 @@
     <div class="col l5">
       <h3>Burgers Eaten</h3>
       <div class="divider"></div>
+
+        <ul>
+          {{#each burgers}}
+            {{#if this.has_been_eaten}}
+            <br>
+            <li>
+              <p>
+                {{this.id}}. {{this.burger}} eaten by {{this.eaten_by}}
+              </p>
+            </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+
+
     </div>
 
 </div>
