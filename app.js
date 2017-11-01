@@ -34,8 +34,9 @@ app.post('/create', function(req,res){
 });
 
 app.put('/update', function(req,res){
-  connection.query('UPDATE burgers SET eaten_by=?, has_been_eaten=1 WHERE id=?;',[req.body.eatenBy, req.body.value], function(err,results){
+  connection.query('UPDATE burgers SET eaten_by=?, has_been_eaten=1 WHERE id=?;',[req.body.eatenBy, req.body.burgerID], function(err,results){
     if(err) throw err;
+    console.log("\n"+ [req.body.eatenBy, req.body.burgerID] + "\n");
     res.redirect('/');
   });
 });

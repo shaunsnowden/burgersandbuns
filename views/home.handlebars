@@ -32,8 +32,8 @@
           <br>
           <li>
             <p>{{this.id}}. {{this.burger}}</p>
-            <form method="POST" action="/update?_method=PUT" burgerID="{{this.id}}">
-              <textarea type="text" name="eatenBy" placeholder="Name of User"></textarea>
+            <form method="POST" action="/update?_method=PUT">
+              <textarea type="text" name="eatenBy" burgerID="{{this.id}}" placeholder="Name of User"></textarea>
               <button type="submit">EAT DA BURGER</button>
             </form>
           </li>
