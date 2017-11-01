@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 const dateFormat = require('dateformat');
 const exphbs = require('express-handlebars');
 
-const routes = require('./controllers/home.js');
+const router = require('./controllers/home.js');
 var connection = require('./controllers/connection.js');
 
 var port = process.env.PORT || 8010;
@@ -40,7 +40,7 @@ app.put('/update', function(req,res){
   });
 });
 
-app.use('/', routes);
+app.use('/', router);
 
 // Expose the public directory to access all files
 app.use(express.static(path.join(__dirname, 'public')));

@@ -19,6 +19,6 @@ connection.connect(function(err){
   console.log('MySQL connection at id: ' + connection.threadId + '\n Data:');
 });
 
-// console.log('connection.js imported');
+console.log('connection.js imported');
 module.exports = connection;
 
